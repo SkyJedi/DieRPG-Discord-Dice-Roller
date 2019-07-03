@@ -1,0 +1,20 @@
+{
+  "name": "die-rpg",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "debug": "nodemon start.js"
+  },
+  "keywords": ["dieRPG"],
+  "author": "SkyJedi",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
