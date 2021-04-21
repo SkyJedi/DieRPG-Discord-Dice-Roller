@@ -6,8 +6,8 @@ const handlers = require('./handlers');
 client.login(config.token).catch(error => console.error(error));
 
 // Register our event handlers (defined below):
-client.on('message', msg => handlers.onMessage(msg, client));
-client.on('ready', () => handlers.onReady(client));
+client.on('message', message => handlers.onMessage({ message, client }));
+client.on('ready', () => handlers.onReady({ client }));
 
 const sendMessage = (message, text) => {
 	message.channel.send(text).catch(console.error);

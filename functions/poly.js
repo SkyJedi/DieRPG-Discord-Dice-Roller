@@ -1,7 +1,7 @@
-const config = require("../config.js");
+const config = require("../config");
 const generateDiceNumber = require('./dice').generateDiceNumber;
 
-function poly(message, params) {
+function poly({ message, params }) {
 	let text = 'rolled:';
 	params.forEach(unit => {
 		let modifier = 0;
@@ -66,4 +66,4 @@ function poly(message, params) {
 	if (text.endsWith('.')) message.reply(text);
 }
 
-exports.poly = poly;
+module.exports = poly;

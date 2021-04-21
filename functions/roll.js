@@ -5,7 +5,7 @@ const order = require('./dice').order;
 const sendMessage = require('../');
 const _ = require('lodash');
 
-const roll = (message, params, flags, client) => {
+const roll = ({ message, params }) => {
 	let rolls = {};
 	if (!params[0]) {
 		message.reply('No dice rolled.');
@@ -164,9 +164,5 @@ const printResults = (results, rolls, message) => {
 
 };
 
-exports.roll = roll;
-exports.processType = processType;
-exports.rollDice = rollDice;
-exports.countSymbols = countSymbols;
-exports.printResults = printResults;
+module.exports = roll;
 

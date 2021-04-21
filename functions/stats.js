@@ -2,7 +2,7 @@ const main = require('../index');
 const Discord = require('discord.js');
 const _ = require('lodash');
 
-const stats = async (msg, params, flags, client) => {
+const stats = async ({ message, client }) => {
 	let stats = `Currently there are ${client.shard.count} shards.\n`;
 	await client.shard.broadcastEval('this.guilds.size')
 		.then(results => stats += `Currently on ${results.reduce((prev, val) => prev + val, 0)} servers.\n`).catch(console.error);
@@ -12,7 +12,7 @@ const stats = async (msg, params, flags, client) => {
 		.setTitle(`${client.user.username} Stats`)
 		.setColor('FFFF00')
 		.setDescription(stats);
-	main.sendMessage(msg, {embed});
+	main.sendMessage(message, {embed});
 };
 
 const buildMemberList = () => {
@@ -21,4 +21,4 @@ const buildMemberList = () => {
 	return users;
 };
 
-exports.stats = stats;
+module.exports = stats;

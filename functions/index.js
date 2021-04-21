@@ -1,6 +1,6 @@
-exports.poly = require('./poly').poly;
-exports.invite = require('./invite').invite;
-exports.roll = require('./roll').roll;
-exports.help = require('./help').help;
-exports.version = require('./version').version;
-exports.stats = require('./stats').stats;
+exports.poly = require('./poly');
+exports.invite = require('./invite');
+exports.roll = require('./roll');
+exports.help = require('./help');
+exports.version = require('./version');
+exports.stats = require('./stats');

@@ -60,8 +60,7 @@ typings/
 # next.js build output
 .next
 
-config.js
-node_modules/
+config.json
 .DS_Store
 data/*
 .idea

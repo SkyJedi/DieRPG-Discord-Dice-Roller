@@ -2,7 +2,7 @@ const main = require('../index');
 const Discord = require('discord.js');
 const prefix = require('../config').prefix;
 
-const help = (msg, params) => {
+const help = ({ message, params }) => {
 	const embed = new Discord.RichEmbed()
 		.setTitle('Help')
 		.setColor('2D7C2F');
@@ -45,7 +45,7 @@ const help = (msg, params) => {
 				.addField('Other Info', '[DieRPG](https://diecomic.com/rpg)');
 			break;
 	}
-	main.sendMessage(msg, {embed});
+	main.sendMessage(message, {embed});
 };
 
-exports.help = help;
+module.exports = help;
